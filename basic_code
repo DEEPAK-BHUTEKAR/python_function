@@ -1,0 +1,83 @@
+#Take a string as input and output each letter of the string on a new line,
+#repeated N times, where N is the position of the letter in the string.
+#your code goes here
+
+str=input("enter the string: ")
+print()
+i=0
+while(i<len(str)):
+    print(str[i] * (i+1))
+    i+=1
+'''
+#Check for password validation?
+passwd=input("enter passwd:")
+import re
+flag=1   #--> for passwd is correct
+if  len(passwd) <6 and len(passwd)>=12:
+    flag=0
+if  not (re.search('[a-z]',passwd) and re.search('[A-Z]',passwd)):
+    flag=0
+if not re.search('[0-9]',passwd):
+    flag=0
+if not re.search('[@$#]',passwd):
+    flag=0
+
+if (flag==1):
+    print (passwd,"Passwd is correct")
+else:
+    print ("Passwd is incorrect")
+
+'''
+
+"""
+#Q.stat: take the password as user input and perform the following task..?
+    #a)for correct password : print the even no between 0 to 50 in reverse order
+    #a)for incorrect password : print the odd no between 50 to 100 in reverse order
+
+x="pune@20"
+y=input("enter password:>")
+if(x==y):
+    print("< password is correct: \n Printing even no between 0 to 50 in reverse >")
+    for i in range(50,0,-2):
+        print(i,end="\t")
+else:
+    print("<Password is incorrect: \n Printing odd no between  50 to 100 in reverse>")
+    for i in range(99,49,-2):
+        print(i, end="\t")
+"""
+
+"""
+#print highest no from list without using max function?
+lst=[33,44,66,99,11,57]
+print(lst)
+lst.sort()
+print("highest no of given list:",lst[0])
+
+"""
+
+"""
+#Q.Find whether the given string is palindrome or not: given string is "malayalam"
+
+str =input("enter the given string: ")
+rev = str[::-1]
+print(rev)
+if str == rev:
+    print(str," is a palindrome")
+else:
+    print(str,"str is not a palindrome")
+"""
+
+
+
+
+"""
+#Q.print the numbers which are  divisible by 13 from given list
+lst=[int(i) for i in input("enter the list element:").split(",")]
+print("Original list:",lst)
+n=len(lst)
+
+print("numbers divisible by 13 are :")
+for i in range(0,n):
+    if lst[i]%13 ==0:
+        print(lst[i])
+"""
