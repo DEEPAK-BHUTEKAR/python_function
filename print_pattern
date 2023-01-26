@@ -1,0 +1,65 @@
+#logic for printing/designing  any pattern:
+#no of line is equal to no of rows 
+#outer loop for no lines u want
+# your inner loop -->no of column u want to print 
+#logic for print no of space (row-i-1)
+
+
+#Q.write python program to print full pyramid
+row=int(input("enter no of rows u want:"))
+for i in range(row):
+    for j in range(row-i-1):
+        print(' ',end='')
+    for j in range(i+1):
+        print('*',end=" ")
+        #print(j+2, end=" ")
+    print()
+
+#Q.write python program to print inverted full pyramid:
+row=int(input("enter no of rows u want:"))
+for i in range(row,0,-1):
+    for j in range(row-i):
+        print(' ',end='')
+    for j in range(i,0,-1):
+        print('*',end=" ")
+        #print(j+2, end=" ")
+    print()
+
+#Q.write python program to print half pyramid:
+row=int(input('no of rows u want:'))
+for i in range(row):
+    for j in range(i+1):
+        print('* ',end='')
+        #print(j+1 , end='') #--print numbers from 1 to len(row)
+
+    print()
+
+#Q.write python program to print inverted half pyramid:
+row=int(input('no of rows u want:'))
+for i in range(row,0,-1):
+    for j in range(i,0,-1):
+        print('* ',end='')
+        #print(j+1 , end='') #--print numbers from 1 to len(row)
+
+    print()
+
+
+#Q.print the square pattern:(i.e for every row print same no of columns:)
+row=int(input('no of rows u want:'))
+for i in range(row):
+    for j in range(row):
+        print('* ',end='')
+    print()
+
+#Q.print the hollow square pattern:(i.e print only 0th and row-1 rows and column of square:)
+row=int(input('no of rows u want:'))
+for i in range(row):
+    for j in range(row):
+        if i==0 or i==(row-1) or j==0 or j==(row-1):
+            print('@ ',end='')
+        else:
+            print(' ',end='')
+    print()
+
+
+
