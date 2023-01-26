@@ -1,0 +1,132 @@
+#lambda function: Is a function without name and return statement. It often called as lambda expression.
+
+
+
+"""
+#Q.write lambda function to find out square of input no x.
+sqr=lambda x : x*x
+print("square of 5 is ",sqr(5))
+
+
+#Q.write a lambda to add two nos?
+#using normal function:
+def add(x,y):
+    return print("addition of two nos ",x+y)
+res=add(15,27)
+
+#using lambda function:
+add=lambda x,y : x+y
+print("addition of two nos ",add(15,27))
+
+
+
+#Q.write a lambda that accepts the string and return number  of char in the string?
+#using normal function
+def strln(str):
+    #return print("length of string",len(str))
+    c=0
+    for i in str:
+        c+=1
+    return print("length of string",c)        
+
+strln("Hello_Abeer")
+#using lambda function:
+str=lambda x:len(x)
+print("length of string",str("Hello_Abeer"))
+"""
+
+#Q.write a lambda to test the given no even or not?
+def evenno(x):
+    if x%2==0:
+        return 'Even'
+    else:
+        return 'Odd'
+iput=evenno(47)
+print("given input no {} is {}".format(47,iput))
+
+#using lambda function:
+even=lambda x: "Even" if x%2==0 else "Odd"
+
+print("given input no {} is {}".format(44,even(44)))
+
+#Q.Write a Python program to find whether a given string starts with a given character using Lambda.
+starts_with = lambda x: True if x.startswith('P') else False
+print(starts_with('Python'))
+starts_with = lambda x: True if x.startswith('P') else False
+print(starts_with('sql'))
+
+#Q.Write a Python program to extract year, month, date and time using Lambda.
+import datetime
+now = datetime.datetime.now()
+print(now)
+year=lambda x: x.year
+month=lambda x: x.month
+day=lambda x: x.day
+tim=lambda x: x.time()
+print(year(now))
+print(month(now))
+print(day(now))
+print(t(now))
+
+#-----------------------------------------------------------------------------------------------------------
+#When lambda expression applied on sequence using following function:
+
+'''1)Filter()-->filter those element for lambda function return True
+Syntax:
+filter(function name,sequence/iterable)'''
+"""#Q.write a lambda function to filter even no from the list
+lst=[4,2,0,5,7,11,-8,-32]
+#obj=filter(lambda,lst)
+obj=filter(lambda x : x%2==0 and x !=0 , lst)
+print(type(obj))
+print(list(obj))
+for i in obj: print(i)
+"""
+"""
+#Q)Filter:filter  those element of sequence for which function returns true
+lst=[40,55,80,67,97,43,75,83]
+def marks(x):
+    if x>=60:
+        return True
+res=filter(marks,lst) #---->return the filter object (use list to convert filter object into list )
+print(res)
+print(type(res))
+for i in res:
+    print(i)
+ #-----------or we can used lambda function
+res=list(filter(lambda x: x>60,lst))
+print(res)
+>>[80, 67, 97, 75, 83]
+
+
+"""
+
+'''2)Map():Is similar to filter function but it can perform modification on each element of sequence.
+Syntax:  filter(function name,sequence)'''
+
+
+'''
+QWrite a Python program to square and cube every number in a given list of integers using Lambda.
+
+print("Original list of integers:")
+lst=[4,2,0,5,7,11,-8,-12,-14]
+#obj=map(lambda,lst)
+sqr_num=list(map(lambda x: x**2  , sqr_num))
+print("square of elements of list \n",obj)
+cube_num=list(map(lambda x: x**3  , lst))
+print("cube of all elements of list \n",cube_num)
+
+'''
+'''
+#3)Reduce ():to reduce all elements into single value by performing operation cumulative depending upon lambda
+#syntax:
+#import functools 
+#reduce(lambda,sequence)
+'''Q.write a lambda function that return cumulative product of elements of tuple'''
+from functools import *
+tpl=(1, 2, 3, 4, 5, 6, 7, 8, 9)
+#no need to convert obj into list/tuple as reduce() function return single value.
+obj=reduce(lambda x, y : x*y , tpl)
+print("cumulative product=",obj)
+
+'''
